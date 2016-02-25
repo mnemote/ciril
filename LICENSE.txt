@@ -1,0 +1,7 @@
+Will be released under an open hardware license:
+most likely either CERN or TAPR open hardware license
+or possibly just under an MIT license.
+Undecided as yet and seeking legal opinions.
+
+In the meantime, All Rights Reserved.
+(c) 2016 Mnemote Pty Ltd
