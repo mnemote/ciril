@@ -8,10 +8,21 @@ put together an open hardware design compatible with
 the `Flobot <http://github.com/mnemote/flobot>`_ project and also 
 projects such as `NodeMCU <http://nodemcu.com/>`_.
 
+Why so small?
+=============
+
 The eventual aim is for dimensions of approximately
 1 cubic inch (25 x 25 x 25 mm = 16 cubic centimeters),
 but the immediate goal is approximately 40 x 40 x 40 mm
 (4 cubic inches).
+
+The intention is to be a size which is easy for a small 
+child to pick up one-handed and which is small enough to
+explore line following and so on experiments on a desktop
+sized platform (approx 1m^2)
+
+Hardware
+========
 
 The main board features two miniature stepper motors 
 soldered directly to the PCB and driving two very small 
@@ -23,10 +34,12 @@ with its antenna protruding over the edge of the main board
 to reduce signal interference.
 
 A micro-USB port allows charging the built-in LiPo battery
-and reflashing the ESP8266 via a serial port converter.
+and reflashing the ESP8266 (for Flobot or NodeMCU) via a
+serial port converter.
 
 Sensors include a line-following sensor, ambient light sensor
-and an ultrasonic range sensor.
+and an ultrasonic range sensor (if there's any pins left over,
+maybe a header)
 
 A 3D printed shell on the top and bottom of the robot provides
 protection and physical support.  The lower shell supports the
@@ -55,7 +68,8 @@ Processor
 Wheel Motors
 ------------
 
-* Micro-stepper motors from Ebay in 4,6,10,15mm diameters. * Very small rubber wheels/tyres and also model airplane foam wheels.
+* Micro-stepper motors from Ebay in 4,6,10,15mm diameters.
+* Very small rubber wheels/tyres and also model airplane foam wheels.
 * Direct driving the wheels from tiny steppers is not ideal, other options
   like rubber band drive belts may need to be considered.
 * this will require some experimentation.
