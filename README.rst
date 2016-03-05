@@ -8,6 +8,9 @@ put together an open hardware design compatible with
 the `Flobot <http://github.com/mnemote/flobot>`_ project and also 
 projects such as `NodeMCU <http://nodemcu.com/>`_.
 
+(The `EMW3165 <http://www.emw3165.com/>`_ is probably
+also worth considering ...)
+
 Why so small?
 =============
 
