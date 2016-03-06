@@ -36,7 +36,7 @@ module motor_model () {
 module motor_clear() {
     cylinder(d=motor_dia, h=axle_len+2, center=true);
     translate([-motor_dia/2,0,motor_len/2-axle_len/2]) cube([motor_dia, motor_dia, motor_len+2], center=true);
-    translate([0,0,motor_len/2-axle_len/2]) cube([motor_dia+10, motor_dia+5, motor_len-5], center=true);
+    translate([0,0,motor_len/2-axle_len/2]) cube([motor_dia+10, motor_dia+4, motor_len-5], center=true);
     translate([wheel_dia/4+wheel_clr/2,0,axle_len/2-1]) cube([wheel_dia/2+wheel_clr, wheel_dia+wheel_clr*2, wheel_wid*2], center=true);
     translate([0,0,axle_len/2-1]) cylinder(d=wheel_dia+wheel_clr*2, h=wheel_wid*2, center=true);
 }
@@ -86,8 +86,8 @@ module lower_shell() {
         motors_clear();
         screw_clear();
         hull() {
-            translate([12,5,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
-            translate([12,-5,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
+            translate([12,5,-6]) cylinder(d1=4.5, d2=1, h=9, center=true);
+            translate([12,-5,-6]) cylinder(d1=4.5, d2=1, h=9, center=true);
         }
         
         //translate([-19,0,-10.5]) cylinder(d=6, h=2, center=true);
@@ -116,12 +116,21 @@ module upper_shell() {
         translate([0, 0, -sphere_dia]) cube(size=sphere_dia*2, center=true);
         motors_clear();
         board_clear();
+        translate([0,0,sphere_dia/2]) cylinder(d=1,h=4,center=true);
+        
+        rotate([0,45,0]) translate([0,0,sphere_dia/2]) cylinder(d=1,h=4,center=true);
+        for (i=[0:30:360]) {
+            rotate([0,45,i]) translate([0,0,sphere_dia/2]) cylinder(d=1,h=4,center=true);
+        }
+        for (i=[0:60:360]) {
+            rotate([0,22.5,i]) translate([0,0,sphere_dia/2]) cylinder(d=1,h=4,center=true);
+        }
     }
         
 }
 
-motors_model();
-board_model();
+//motors_model();
+//board_model();
 //screw_model();
-translate([0,0,10]) upper_shell();
-translate([0,0,-10]) lower_shell();
+//translate([0,0,0]) upper_shell();
+translate([0,0,0]) lower_shell();

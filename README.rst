@@ -69,12 +69,12 @@ Processor
   ESP8266 modules and can be picked up for around AUD5 on Ebay.
 
 * It is also possible that an
-`ATtiny2313 <http://www.atmel.com/images/doc2543.pdf>`_
-or similar could communicate with the main processor over I2C to 
-provide more I/O.  Currently, the NodeMCU uses a USB-to-serial
-converter, for roughly the same PCB footprint we could use a more
-general piece of hardware which would be useful when the system is
-untethered.
+  `ATtiny2313 <http://www.atmel.com/images/doc2543.pdf>`_
+  or similar could communicate with the main processor over I2C to 
+  provide more I/O.  Currently, the NodeMCU uses a USB-to-serial
+  converter, for roughly the same PCB footprint we could use a more
+  general piece of hardware which would be useful when the system is
+  untethered.
 
 Wheel Motors
 ------------
@@ -86,6 +86,18 @@ Wheel Motors
 * Direct driving the wheels from tiny steppers is not ideal, other options
   like rubber band drive belts may need to be considered.
 * this will require some experimentation.
+
+Battery / Charger
+-----------------
+
+The ESP8266 runs on 3.0 - 3.6V, so 2 x AAA batteries is a possibility,
+but that's a fairly large battery and AAAA don't seem to be widely 
+available.
+
+Preferably a LiIon / LiPo cell would be better. Small very high energy
+ones are available for RC heli applications.  A chip like the 
+`LTC3558 <http://cds.linear.com/docs/en/datasheet/3558.pdf>`_ could
+act as both charge-from-USB and as an efficient LiPo -> 3.3V converter.
 
 Motor drivers
 -------------
@@ -108,7 +120,8 @@ Maybe use two infrared proximity sensors such as `QRD1114 <https://www.fairchild
 Or maybe use two LEDs pointing down, either side of a single analog
 photodiode feeding into the ADC pin.  By switching the LEDs on and off
 and monitoring light level change, we can extract analog line follower
-information from the single ADC.
+information from the single ADC.  The lower shell can provide a light guide
+for these components.
 
 Ambient Light
 -------------
