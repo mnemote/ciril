@@ -1,6 +1,8 @@
 // Totally phoney model with made up numbers.
 // OpenSCAD rocks, though.
 
+$fn = 50;
+
 sphere_dia = 50;
 sphere_thi = 4;
 board_siz = 32;
@@ -34,7 +36,7 @@ module motor_model () {
 module motor_clear() {
     cylinder(d=motor_dia, h=axle_len+2, center=true);
     translate([-motor_dia/2,0,motor_len/2-axle_len/2]) cube([motor_dia, motor_dia, motor_len+2], center=true);
-    translate([0,0,motor_len/2-axle_len/2]) cube([motor_dia+5, motor_dia+5, motor_len-5], center=true);
+    translate([0,0,motor_len/2-axle_len/2]) cube([motor_dia+10, motor_dia+5, motor_len-5], center=true);
     translate([wheel_dia/4+wheel_clr/2,0,axle_len/2-1]) cube([wheel_dia/2+wheel_clr, wheel_dia+wheel_clr*2, wheel_wid*2], center=true);
     translate([0,0,axle_len/2-1]) cylinder(d=wheel_dia+wheel_clr*2, h=wheel_wid*2, center=true);
 }
@@ -64,12 +66,12 @@ module board_model() {
         color("red") cube([board_siz,board_siz,board_thi], center=true);
         screw_clear();
     }
-    color("silver") translate([21,0,5]) rotate([0,90,0]) cylinder(d=8, h=8, center=true);
+    color("silver") translate([21,0,5]) rotate([0,90,0]) cylinder(d=9, h=6, center=true);
     color("gold") translate([-10,0,2]) cube([22,13,2], center=true);
 }
  
 module board_clear() {
-    cube([board_siz+2,board_siz+2,board_thi+1], center=true);
+    cube([board_siz+1,board_siz+1,board_thi+1], center=true);
     cube([board_siz-4,board_siz-5,board_thi+4], center=true);
     translate([21,0,5]) rotate([0,90,0]) cylinder(d=10,h=12,center=true);
     translate([-10,0,2]) cube([24,15,5], center=true);    
@@ -83,31 +85,42 @@ module lower_shell() {
         board_clear();
         motors_clear();
         screw_clear();
-        translate([12,0,0]) cylinder(d=4, h=25, center=true);
-        translate([12,5,0]) cylinder(d=4, h=25, center=true);
-        translate([12,-5,0]) cylinder(d=4, h=25, center=true);
+        translate([12,0,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
+        translate([12,5,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
+        translate([12,-5,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
         
-        translate([-19,0,-10.5]) cylinder(d=6, h=2, center=true);
-        translate([19,0,-10.5]) cylinder(d=6, h=2, center=true);
+        //translate([-19,0,-10.5]) cylinder(d=6, h=2, center=true);
+        //translate([19,0,-10.5]) cylinder(d=6, h=2, center=true);
+        
+        translate([-10,0,-4]) cube([9,9,9], center=true);
+        translate([-13,0,-4]) cube([10,27,9], center=true);
+        translate([17,0,-4]) cube([4,27,9], center=true);
+        
+        translate([11,11,-4]) cube([6,5,9], center=true);
+        translate([11,-11,-4]) cube([6,5,9], center=true);
+        
     }
 }
 
 module upper_shell() {
     difference() {
-        sphere(d=sphere_dia);
+        union() {
+            sphere(d=sphere_dia);
+            translate([21,0,5]) rotate([0,90,0]) cylinder(d=13,h=7 ,center=true);
+        }
         intersection() {
             sphere(d=sphere_dia-sphere_thi*2);
             cube([32,32,50], center=true);
-             
         }
-        translate([0, 0, -sphere_dia/2]) cube(size=sphere_dia, center=true);
+        translate([0, 0, -sphere_dia]) cube(size=sphere_dia*2, center=true);
         motors_clear();
         board_clear();
     }
+        
 }
 
-motors_model();
-board_model();
-screw_model();
-upper_shell();
+//motors_model();
+//board_model();
+//screw_model();
+//upper_shell();
 lower_shell();
