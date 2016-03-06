@@ -55,6 +55,10 @@ and battery inside.
     :width: 50%
     :class: center
 
+.. image:: img/render.png
+    :width: 90%
+    :class: center
+
 Very much just started development!
 
 Parts
@@ -68,11 +72,21 @@ Processor
 * ESP8266 on ESP-12E module.  This has the most pins available of the
   ESP8266 modules and can be picked up for around AUD5 on Ebay.
 
+* It is also possible that an
+`ATtiny2313 <http://www.atmel.com/images/doc2543.pdf>`_
+or similar could communicate with the main processor over I2C to 
+provide more I/O.  Currently, the NodeMCU uses a USB-to-serial
+converter, for roughly the same PCB footprint we could use a more
+general piece of hardware which would be useful when the system is
+untethered.
+
 Wheel Motors
 ------------
 
 * Micro-stepper motors from Ebay in 4,6,10,15mm diameters.
-* Very small rubber wheels/tyres and also model airplane foam wheels.
+* Very small rubber wheels/tyres and also model airplane foam wheels
+  worth consideration.  Experiments with foam tyres suggest they've got
+  not much traction.
 * Direct driving the wheels from tiny steppers is not ideal, other options
   like rubber band drive belts may need to be considered.
 * this will require some experimentation.
@@ -89,7 +103,6 @@ some room to move here ...
   `LV8548MC <http://www.mouser.com/ds/2/308/ENA2038-D-119504.pdf>`_ or similar. 
 * Or maybe drive motors directly from a CMOS type buffer if the current
   draw is low enough.  A dual-quad-latch would reduce pin count a little. 
-* It is also possible that an `ATtiny2313 <http://www.atmel.com/images/doc2543.pdf>`_ or similar could communicate with the main processor over I2C and directly drive the steppers from its output pins.
 
 Line Follower
 -------------

@@ -85,9 +85,10 @@ module lower_shell() {
         board_clear();
         motors_clear();
         screw_clear();
-        translate([12,0,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
-        translate([12,5,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
-        translate([12,-5,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
+        hull() {
+            translate([12,5,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
+            translate([12,-5,-6]) cylinder(d1=4.5, d2=2, h=9, center=true);
+        }
         
         //translate([-19,0,-10.5]) cylinder(d=6, h=2, center=true);
         //translate([19,0,-10.5]) cylinder(d=6, h=2, center=true);
@@ -119,8 +120,8 @@ module upper_shell() {
         
 }
 
-//motors_model();
-//board_model();
+motors_model();
+board_model();
 //screw_model();
-//upper_shell();
-lower_shell();
+translate([0,0,10]) upper_shell();
+translate([0,0,-10]) lower_shell();
