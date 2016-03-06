@@ -51,10 +51,6 @@ at either end.  The upper shell has a rounded, childs-hand-friendly
 shape, with cutouts to expose the range sensor and reveal the PCB
 and battery inside.
 
-.. image:: img/ciril.png
-    :width: 50%
-    :class: center
-
 .. image:: img/render.png
     :width: 90%
     :class: center
