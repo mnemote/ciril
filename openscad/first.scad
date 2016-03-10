@@ -129,8 +129,8 @@ module upper_shell() {
         
 }
 
-//motors_model();
-//board_model();
-//screw_model();
-//translate([0,0,0]) upper_shell();
-translate([0,0,0]) lower_shell();
+motors_model();
+board_model();
+screw_model();
+translate([0,0,10]) upper_shell();
+translate([0,0,-10]) lower_shell();

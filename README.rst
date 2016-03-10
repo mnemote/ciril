@@ -24,6 +24,10 @@ child to pick up one-handed and which is small enough to
 explore line following and so on experiments on a desktop
 sized platform (approx 1m^2)
 
+(I just noticed the `AERobot <http://affordableeducationrobot.github.io/v1.0/index.html>`_ which has very similar aims ... and instead of
+wheels it shakes along on pager motors! Very strange but also
+quite a cool idea)
+
 Hardware
 ========
 
