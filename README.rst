@@ -83,7 +83,11 @@ Processor
 Wheel Motors
 ------------
 
-* Micro-stepper motors from Ebay in 4,6,10,15mm diameters.
+* Micro-stepper motors from Ebay in 4,6,10,15mm diameters.  
+
+  UPDATE: The 10mm and 6mm motors have arrived and the 10mm look like
+  the most likely option at this point.
+
 * Very small rubber wheels/tyres and also model airplane foam wheels
   worth consideration.  Experiments with foam tyres suggest they've got
   not much traction.
@@ -145,5 +149,7 @@ as we can detect a barrier.
 
 Alternatives are the `Sharp Infrared distance sensors <http://www.sharpsma.com/webfm_send/1489>`_ or similar.
 
-
+.. image:: img/teenyrobots.jpg
+    :width: 90%
+    :class: center
 
