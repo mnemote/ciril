@@ -149,7 +149,18 @@ as we can detect a barrier.
 
 Alternatives are the `Sharp Infrared distance sensors <http://www.sharpsma.com/webfm_send/1489>`_ or similar.
 
+Photos
+======
+
 .. image:: img/teenyrobots.jpg
+    :width: 90%
+    :class: center
+
+.. image:: img/ciril-proto.jpg
+    :width: 90%
+    :class: center
+
+.. image:: img/ciril-wheels.png
     :width: 90%
     :class: center
 
