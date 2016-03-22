@@ -107,6 +107,14 @@ ones are available for RC heli applications.  A chip like the
 `LTC3558 <http://cds.linear.com/docs/en/datasheet/3558.pdf>`_ could
 act as both charge-from-USB and as an efficient LiPo -> 3.3V converter.
 
+The little steppers seem to drive quite well on 4.5V, and potentially
+could take a lot more (briefly).  So I'm also considering if the motor
+circuit should run directly from two LiPo cells in series (7.2V) with
+the 3.3V supply regulated by a buck regulator like LM2596.
+
+The other thing which building a prototype made clear is that I need a
+power button or switch of some kind!
+
 Motor drivers
 -------------
 
